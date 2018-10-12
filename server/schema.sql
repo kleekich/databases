@@ -1,28 +1,32 @@
 
--- CREATE DATABASE chat;
+DROP DATABASE chat; 
+CREATE DATABASE chat;
  
 USE chat;
-DROP TABLE messages;
-DROP TABLE users; 
 
 CREATE TABLE users (
-  id INT(10),
+  id INT(11) AUTO_INCREMENT,
   username TEXT,
   PRIMARY KEY (id)
 );
 
 CREATE TABLE messages (
   /* Describe your table here.*/
-  id INT(10), 
-  messageText TEXT,
+  id INT(11) AUTO_INCREMENT, 
+  message TEXT,
   room TEXT,
-  userID INT ,
+  userID INT(11),
   created_at TIME, 
   PRIMARY KEY (id),
   FOREIGN KEY (userID) REFERENCES users(id)
-  
 );
 
+
+-- //this page makes it so that you can run 
+-- a bunch of commands here and in the command line
+-- for this code rather than in the mysql command line
+-- where oyu'd have to type in all of this every time instead
+-- of running one command
 
 
 -- SHOW tables;

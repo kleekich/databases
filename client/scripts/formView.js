@@ -1,3 +1,5 @@
+
+
 var FormView = {
 
   $form: $('form'),
@@ -16,6 +18,8 @@ var FormView = {
       text: FormView.$form.find('#message').val(),
       roomname: Rooms.selected || 'lobby'
     };
+    
+    // controller.messages.post(message);
 
     Parse.create(message, (data) => {
       _.extend(message, data);
@@ -29,3 +33,5 @@ var FormView = {
   }
 
 };
+
+export default FormView;
